@@ -176,14 +176,12 @@ namespace OpenBot {
 
         public static void CreateConfig () {
             File.Create (cd + "\\Config\\Config.ini");
-            parser.AddSetting ("botsettings", "botlewddir");
             parser.AddSetting ("botsettings", "logwithoutstamp");
             parser.SaveSettings (cd + "\\Config\\Config.ini");
             return;
         }
 
         public static void SaveConfig () {
-            parser.AddSetting ("botsettings", "botlewddir", Config.LewdDir);
             parser.AddSetting ("botsettings", "logwithoutstamp", Config.LogWithoutStamp);
             parser.SaveSettings (cd + "\\Config\\Config.ini");
             return;
@@ -192,7 +190,6 @@ namespace OpenBot {
         public async Task ParseConfig () {
             try //Parse the config file
             {
-                Config.LewdDir = parser.GetSetting ("botsettings", "botlewddir");
                 Config.LogWithoutStamp += parser.GetSetting ("botsettings", "logwithoutstamp");
                 if (parser.GetSetting ("botsettings", "canary") == "true") {
                     Config.BotDir = Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData) + "\\OpenBot\\Canary";
