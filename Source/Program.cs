@@ -132,7 +132,6 @@ namespace OpenBot {
                     "Bot Plaform: " + Config.OS + Environment.NewLine +
                     "=====================================";
 
-                SvcGetupdate.CheckUpdate ();
                 await Helper.LoggingAsync (new LogMessage (LogSeverity.Verbose, "Bot", Message));
             };
 
