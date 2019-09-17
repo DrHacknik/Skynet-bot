@@ -77,7 +77,7 @@ namespace OpenBot {
             Console.Clear ();
             Helper.RunAsync (Helper.LoggingAsync (new LogMessage (LogSeverity.Verbose, "Bot", "========================================================================\r\n\\^.^/ Starting " + Config.BotName + "~\r\nVersion: " + Config.Version + "\r\nPlatform: " + Config.OS + "\r\n========================================================================\r\n")));
             Console.ForegroundColor = ConsoleColor.White;
-            if (File.ReadAllText (Path.Combine (cd + "\\ApiKey")) == null) {
+            if (File.ReadAllText (Path.Combine (cd,"ApiKey")) == null) {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Helper.RunAsync (Helper.LoggingAsync (new LogMessage (LogSeverity.Verbose, "Bot", "No API Token is stored within the Config.")));
                 Console.ForegroundColor = ConsoleColor.Red;
@@ -86,7 +86,6 @@ namespace OpenBot {
                 await Task.Delay (-1);
                 return;
             }
-
             DiscordClient = new DiscordSocketClient (new DiscordSocketConfig {
                 LogLevel = LogSeverity.Verbose
             });
@@ -99,7 +98,7 @@ namespace OpenBot {
 
                 Helper.RunAsync (Helper.LoggingAsync (new LogMessage (LogSeverity.Verbose, "Bot", "Connecting...")));
 
-                await DiscordClient.LoginAsync (TokenType.Bot, File.ReadAllText (Path.Combine (cd + "\\ApiKey")));
+                await DiscordClient.LoginAsync (TokenType.Bot, File.ReadAllText (Path.Combine (cd, "ApiKey")));
 
                 Helper.RunAsync (Helper.LoggingAsync (new LogMessage (LogSeverity.Verbose, "Bot", "Key file is valid")));
 
