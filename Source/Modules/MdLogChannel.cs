@@ -20,7 +20,6 @@ namespace OpenBot
             string Message = "Command **!setlogchannel** requested by " + Context.User.Username + ">" + Environment.NewLine +
                 "in channel <#" + Context.Channel.Id + "> with value: *" + IChannel + "*";
             Config.BotChannelId = IChannel;
-            Program.SaveConfig();
             await Helper.LoggingAsync(new LogMessage(LogSeverity.Verbose, "Module", Message));
             return;
         }
