@@ -43,27 +43,7 @@ namespace OpenBot.Services {
                     File.WriteAllText (cd + "\\Temp\\Update.ini", upd_get);
                 }
 
-                WebRequest request1 = WebRequest.Create ("https://github.com/DrHacknik/OpenBot/raw/master/Data/Images/Icons/Database.ini");
-                WebResponse response1 = request1.GetResponse ();
-                Stream dataStream1 = response1.GetResponseStream ();
-                StreamReader DataRead = new StreamReader (dataStream);
-                string DataGet = DataRead.ReadToEnd ();
-
-                if (!Directory.Exists (cd + "\\Temp")) {
-                    Directory.CreateDirectory (cd + "\\Temp");
-                }
-                if (File.Exists (cd + "\\Temp\\Database.ini")) {
-                    File.Delete (cd + "\\Temp\\Database.ini");
-                    File.WriteAllText (cd + "\\Temp\\Database.ini", DataGet);
-                } else {
-                    File.WriteAllText (cd + "\\Temp\\Database.ini", DataGet);
-                }
-                IniParser parser1 = new IniParser (cd + "\\Temp\\Database.ini");
-                WeatherInfo.icon = parser1.GetSetting ("normal_conditions", "clearnight");
-
-                //Get and read latest update info, then grab it
-                //But first delete old files, and continue.
-
+            
                 IniParser parser = new IniParser (cd + "\\Temp\\Update.ini");
 
                 if (Config.Branch == "Master") {
