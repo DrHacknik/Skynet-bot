@@ -71,17 +71,8 @@ namespace OpenBot {
         private CommandHandler CmdHandler;
         private string ApiKey = Config.ApiKey;
         private static string cd = Config.BotDir;
-        private static IniParser parser = new IniParser (cd + "\\Config\\Config.ini");
 
         public async Task StartAsync () {
-            if (!File.Exists (cd + "\\Config\\Config.ini")) {
-                CreateBotDir ();
-                CreateConfig ();
-                SaveConfig ();
-            } else {
-                await ParseConfig ();
-            }
-
             Console.ForegroundColor = ConsoleColor.Magenta;
             Console.Clear ();
             Helper.RunAsync (Helper.LoggingAsync (new LogMessage (LogSeverity.Verbose, "Bot", "========================================================================\r\n\\^.^/ Starting " + Config.BotName + "~\r\nVersion: " + Config.Version + "\r\nPlatform: " + Config.OS + "\r\n========================================================================\r\n")));
@@ -172,35 +163,6 @@ namespace OpenBot {
                     return;
                 }
             }
-        }
-
-        public static void CreateConfig () {
-            File.Create (cd + "\\Config\\Config.ini");
-            parser.AddSetting ("botsettings", "logwithoutstamp");
-            parser.SaveSettings (cd + "\\Config\\Config.ini");
-            return;
-        }
-
-        public static void SaveConfig () {
-            parser.AddSetting ("botsettings", "logwithoutstamp", Config.LogWithoutStamp);
-            parser.SaveSettings (cd + "\\Config\\Config.ini");
-            return;
-        }
-
-        public async Task ParseConfig () {
-            try //Parse the config file
-            {
-                Config.LogWithoutStamp += parser.GetSetting ("botsettings", "logwithoutstamp");
-                if (parser.GetSetting ("botsettings", "canary") == "true") {
-                    Config.BotDir = Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData) + "\\OpenBot\\Canary";
-                    Config.Branch = "Canary";
-                } else {
-                    Config.BotDir = Environment.GetFolderPath (Environment.SpecialFolder.ApplicationData) + "\\OpenBot";
-                    Config.Branch = "Master";
-                }
-                await SetStatus ();
-            } catch (Exception ex) { }
-            return;
         }
     }
 }
