@@ -14,7 +14,7 @@ namespace Skynet {
             EmbedBuilder Embed = new EmbedBuilder ();
             Embed.WithTitle ("About Skynet [Beta]:");
             Embed.WithColor (new Color (236, 183, 4));
-            Embed.WithImageUrl ("https://github.com/DrHacknik/Skynet/blob/master/Splash_256.png?raw=true");
+            Embed.WithImageUrl ("https://skyline-emu.github.io/Assets/Icon.png");
             Embed.WithDescription (
                 "**" + Config.BotName + "** for Discord" + Environment.NewLine +
                 "**by Dr.Hacknik**" + Environment.NewLine +
@@ -23,7 +23,7 @@ namespace Skynet {
                 "**Bot revision:** " + Config.BuildDate + Environment.NewLine +
                 "**Bot Type:** DotNet Core | Web-socket-based" + Environment.NewLine +
                 "**Bot Platform:** " + Config.OS + Environment.NewLine +
-                "Dedicated Website: https://dochacknik.keybase.pub/index/Skynet");
+                "Dedicated Website: https://skyline-emu.github.io");
             Embed.WithTimestamp (DateTime.UtcNow);
             await Context.Channel.SendMessageAsync (String.Empty, false, Embed.Build ());
 
