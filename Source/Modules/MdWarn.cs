@@ -6,7 +6,7 @@ using Discord.WebSocket;
 
 namespace Skynet.Modules {
     public class MdWarn : ModuleBase<SocketCommandContext> {
-        [Command ("Warn-beta")]
+        [Command ("Warn")]
         [RequireUserPermission (GuildPermission.ManageMessages)]
         public async Task Warn (SocketGuildUser WarnedUser, [Remainder] string WarningReason) {
             string CurrentTime = DateTime.Now.ToString ();

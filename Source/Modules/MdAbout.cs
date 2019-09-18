@@ -1,24 +1,21 @@
-﻿using Discord;
-using Discord.Commands;
-using System;
+﻿using System;
 using System.Threading.Tasks;
+using Discord;
+using Discord.Commands;
 
-namespace Skynet
-{
-    public class About : ModuleBase<SocketCommandContext>
-    {
-        private string cd = System.IO.Directory.GetCurrentDirectory();
+namespace Skynet {
+    public class About : ModuleBase<SocketCommandContext> {
+        private string cd = System.IO.Directory.GetCurrentDirectory ();
 
-        private string time = DateTime.Now.ToString();
+        private string time = DateTime.Now.ToString ();
 
-        [Command("About-beta")]
-        public async Task SendAbout()
-        {
-            EmbedBuilder Embed = new EmbedBuilder();
-            Embed.WithTitle("About Skynet [Beta]:");
-            Embed.WithColor(new Color(236, 183, 4));
-            Embed.WithImageUrl("https://github.com/DrHacknik/Skynet/blob/master/Splash_256.png?raw=true");
-            Embed.WithDescription(
+        [Command ("About")]
+        public async Task SendAbout () {
+            EmbedBuilder Embed = new EmbedBuilder ();
+            Embed.WithTitle ("About Skynet [Beta]:");
+            Embed.WithColor (new Color (236, 183, 4));
+            Embed.WithImageUrl ("https://github.com/DrHacknik/Skynet/blob/master/Splash_256.png?raw=true");
+            Embed.WithDescription (
                 "**" + Config.BotName + "** for Discord" + Environment.NewLine +
                 "**by Dr.Hacknik**" + Environment.NewLine +
                 "**Version:** " + Config.Version + Environment.NewLine +
@@ -27,12 +24,12 @@ namespace Skynet
                 "**Bot Type:** DotNet Core | Web-socket-based" + Environment.NewLine +
                 "**Bot Platform:** " + Config.OS + Environment.NewLine +
                 "Dedicated Website: https://dochacknik.keybase.pub/index/Skynet");
-            Embed.WithTimestamp(DateTime.UtcNow);
-            await Context.Channel.SendMessageAsync(String.Empty, false, Embed.Build());
+            Embed.WithTimestamp (DateTime.UtcNow);
+            await Context.Channel.SendMessageAsync (String.Empty, false, Embed.Build ());
 
-            await Context.Message.DeleteAsync();
+            await Context.Message.DeleteAsync ();
 
-            await Helper.LoggingAsync(new LogMessage(LogSeverity.Verbose, "Bot", ""));
+            await Helper.LoggingAsync (new LogMessage (LogSeverity.Verbose, "Bot", ""));
         }
     }
 }
