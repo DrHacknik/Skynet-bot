@@ -12,7 +12,7 @@ namespace Skynet {
         [Command ("About")]
         public async Task SendAbout () {
             EmbedBuilder Embed = new EmbedBuilder ();
-            Embed.WithTitle ("About Skynet [Beta]:");
+            Embed.WithTitle ("About " + Config.BotName + " [Beta]:");
             Embed.WithColor (new Color (236, 183, 4));
             Embed.WithImageUrl ("https://skyline-emu.github.io/Assets/Icon.png");
             Embed.WithDescription (
