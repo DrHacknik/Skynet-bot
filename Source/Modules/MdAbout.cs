@@ -3,7 +3,7 @@ using Discord.Commands;
 using System;
 using System.Threading.Tasks;
 
-namespace OpenBot
+namespace Skynet
 {
     public class About : ModuleBase<SocketCommandContext>
     {
@@ -15,9 +15,9 @@ namespace OpenBot
         public async Task SendAbout()
         {
             EmbedBuilder Embed = new EmbedBuilder();
-            Embed.WithTitle("About OpenBot [Beta]:");
+            Embed.WithTitle("About Skynet [Beta]:");
             Embed.WithColor(new Color(236, 183, 4));
-            Embed.WithImageUrl("https://github.com/DrHacknik/OpenBot/blob/master/Splash_256.png?raw=true");
+            Embed.WithImageUrl("https://github.com/DrHacknik/Skynet/blob/master/Splash_256.png?raw=true");
             Embed.WithDescription(
                 "**" + Config.BotName + "** for Discord" + Environment.NewLine +
                 "**by Dr.Hacknik**" + Environment.NewLine +
@@ -26,7 +26,7 @@ namespace OpenBot
                 "**Bot revision:** " + Config.BuildDate + Environment.NewLine +
                 "**Bot Type:** DotNet Core | Web-socket-based" + Environment.NewLine +
                 "**Bot Platform:** " + Config.OS + Environment.NewLine +
-                "Dedicated Website: https://dochacknik.keybase.pub/index/openbot");
+                "Dedicated Website: https://dochacknik.keybase.pub/index/Skynet");
             Embed.WithTimestamp(DateTime.UtcNow);
             await Context.Channel.SendMessageAsync(String.Empty, false, Embed.Build());
 

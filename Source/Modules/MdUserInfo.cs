@@ -4,7 +4,7 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 
-namespace OpenBot
+namespace Skynet
 {
     public class MdUserInfo : ModuleBase<SocketCommandContext>
     {

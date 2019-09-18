@@ -4,7 +4,7 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 
-namespace OpenBot.Modules {
+namespace Skynet.Modules {
     public class MdHowAreYou : ModuleBase<SocketCommandContext> {
         private string cd = AppDomain.CurrentDomain.BaseDirectory;
         private string time = DateTime.Now.ToString ();

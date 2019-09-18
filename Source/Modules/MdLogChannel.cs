@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 
-namespace OpenBot
+namespace Skynet
 {
     public class LogChannel : ModuleBase<SocketCommandContext>
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Discord;
 using Discord.WebSocket;
-using OpenBot.Services;
+using Skynet.Services;
 
 /*
 ==============================================
@@ -15,12 +15,12 @@ and licensed under the GNU GPL v3 License Agreement.
 
 This bot used to formly known as Ryu-bot; and thusly
 is still named so. But it's correct name is indeed
-OpenBOT since this bot can be compiled and used
+Skynet since this bot can be compiled and used
 with any API Key.
 
 Thusly, it is requested and upheld with the license
 that all information pertaining that the source
-is indeed OpenBOT's or a variant of such, is
+is indeed Skynet's or a variant of such, is
 directly shown in the code and within the Commands
 themselves. IE: Within the About section.
 
@@ -54,7 +54,7 @@ JSON.
 
 This bot also has a Logging system. The log is
 automatically dumped to the user config folder
-within the subdirectory "OpenBot." Each `.log`
+within the subdirectory "Skynet." Each `.log`
 file is time stamped with the date. This is
 done this way, because who'd want a log dump for
 every min or hour. Since the bot is expected to
@@ -63,7 +63,7 @@ run daily and continue to run.
 ==============================================
  */
 
-namespace OpenBot {
+namespace Skynet {
     public class Program {
         private static void Main (string[] args) => new Program ().StartAsync ().GetAwaiter ().GetResult ();
 

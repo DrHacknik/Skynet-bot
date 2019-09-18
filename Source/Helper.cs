@@ -1,11 +1,11 @@
 ﻿using Discord;
 using Discord.WebSocket;
-using OpenBot.Services;
+using Skynet.Services;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace OpenBot
+namespace Skynet
 {
     public static class Helper
     {

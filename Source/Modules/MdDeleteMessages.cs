@@ -4,7 +4,7 @@ using Discord.WebSocket;
 using System;
 using System.Threading.Tasks;
 
-namespace OpenBot.Modules
+namespace Skynet.Modules
 {
     public class MdDeleteMessages : ModuleBase<SocketCommandContext>
     {

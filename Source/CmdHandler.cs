@@ -5,7 +5,7 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 
-namespace OpenBot {
+namespace Skynet {
     public class CommandHandler : ModuleBase<SocketCommandContext> {
         private DiscordSocketClient DiscordClient;
         private CommandService CmdService;
@@ -29,7 +29,7 @@ namespace OpenBot {
 
             if (UserMsg == null) return;
 
-            if (UserMsg.HasCharPrefix ('!', ref ArgPos)) {
+            if (UserMsg.HasCharPrefix ('/', ref ArgPos)) {
                 var Result = await CmdService.ExecuteAsync (Context, ArgPos);
                 if (!Result.IsSuccess && Result.Error != CommandError.UnknownCommand) {
                     await Context.Message.DeleteAsync ();

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 
-namespace OpenBot.Modules {
+namespace Skynet.Modules {
     public class MdRollRole : ModuleBase<SocketCommandContext> {
         private string time = DateTime.Now.ToString ();
         private string[] Roles;

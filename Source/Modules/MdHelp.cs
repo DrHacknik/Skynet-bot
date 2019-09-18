@@ -3,7 +3,7 @@ using Discord.Commands;
 using System;
 using System.Threading.Tasks;
 
-namespace OpenBot
+namespace Skynet
 {
     public class Help : ModuleBase<SocketCommandContext>
     {
@@ -18,7 +18,7 @@ namespace OpenBot
             EmbedBuilder Embed = new EmbedBuilder();
             Embed.WithTitle("Bot Usage:");
             Embed.WithColor(new Color(236, 183, 4));
-            Embed.WithImageUrl("https://github.com/DrHacknik/OpenBot/blob/master/Splash_256.png?raw=true");
+            Embed.WithImageUrl("https://github.com/DrHacknik/Skynet/blob/master/Splash_256.png?raw=true");
             Embed.WithDescription("\r\n" +
                 "\r\n**!warn-beta <@user>** : Warns the mentioned user." +
                 "\r\n**!rickroll <@user>** : RickRolls the mentioned user." +
@@ -36,7 +36,7 @@ namespace OpenBot
                 "\r\n**!rollrole** : Random Role value." +
                 "\r\n**!userinfo <@user> <image size: One value only, ex 64. If null, then 128 is used>** : Shows the mentioned user's information and avatar image." +
                 "\r\n**!delete-beta <value>** : Deletes the specified amount of previous messages." + Environment.NewLine +
-                "Dedicated Website: https://dochacknik.keybase.pub/index/openbot");
+                "Dedicated Website: https://dochacknik.keybase.pub/index/Skynet");
             Embed.WithTimestamp(DateTime.Now);
             await Context.Channel.SendMessageAsync(string.Empty, false, Embed.Build());
 

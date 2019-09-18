@@ -4,7 +4,7 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 
-namespace OpenBot.Modules {
+namespace Skynet.Modules {
     public class MdWarn : ModuleBase<SocketCommandContext> {
         [Command ("Warn-beta")]
         [RequireUserPermission (GuildPermission.ManageMessages)]

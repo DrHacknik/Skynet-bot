@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 
-namespace OpenBot {
+namespace Skynet {
     public class MdGetUserCount : ModuleBase<SocketCommandContext> {
         private string cd = System.IO.Directory.GetCurrentDirectory ();
 

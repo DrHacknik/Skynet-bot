@@ -4,7 +4,7 @@ using Discord;
 using Discord.Commands;
 using Discord.WebSocket;
 
-namespace OpenBot.Modules {
+namespace Skynet.Modules {
     public class rick : ModuleBase<SocketCommandContext> {
         private string time = DateTime.Now.ToString ();
 

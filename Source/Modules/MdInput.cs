@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Discord;
 using Discord.Commands;
 
-namespace OpenBot.Modules {
+namespace Skynet.Modules {
     public class MdInput : ModuleBase<SocketCommandContext> {
         private string cd = System.IO.Directory.GetCurrentDirectory ();
         private string time = DateTime.Now.ToString ();
